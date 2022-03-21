@@ -24,6 +24,10 @@ Vue.component(
     require("./components/ExampleComponent.vue").default
 );
 
+import userComponent from "./components/UserComponent";
+import createComponent from "./components/CreateComponent";
+import editComponent from "./components/EditComponent";
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -32,6 +36,6 @@ Vue.component(
 
 const app = new Vue({
     el: "#app",
-    // components: { exampleComponent , ProductAttributes},
+    components: { userComponent, createComponent, editComponent },
     methods: {},
 });
