@@ -8,6 +8,16 @@ require("./bootstrap");
 
 window.Vue = require("vue").default;
 
+import App from "./App.vue";
+import VueAxios from "vue-axios";
+import { routes } from "./routes";
+
+const router = createRouter({
+    history: createWebHistory(process.env.BASE_URL),
+    routes,
+});
+
+Vue.use(VueAxios);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -19,14 +29,14 @@ window.Vue = require("vue").default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component(
-    "example-component",
-    require("./components/ExampleComponent.vue").default
-);
+// Vue.component(
+//     "example-component",
+//     require("./components/ExampleComponent.vue").default
+// );
 
-import userComponent from "./components/UserComponent";
-import createComponent from "./components/CreateComponent";
-import editComponent from "./components/EditComponent";
+// import userComponent from "./components/UserComponent";
+// import createComponent from "./components/CreateComponent";
+// import editComponent from "./components/EditComponent";
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -36,6 +46,6 @@ import editComponent from "./components/EditComponent";
 
 const app = new Vue({
     el: "#app",
-    components: { userComponent, createComponent, editComponent },
-    methods: {},
+    render: (h) => h(App),
+    router,
 });

@@ -47,7 +47,6 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
     methods: {
         deleteUser(id) {
@@ -76,3 +75,9 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+h1 {
+    color: #59b984;
+}
+</style>
