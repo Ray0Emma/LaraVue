@@ -51,7 +51,7 @@ export default {
     methods: {
         deleteUser(id) {
             this.axios
-                .delete("http://localhost:8080/api/users/${id}")
+                .delete(`http://localhost:8000/api/users/${id}`)
                 .then((res) => {
                     let i = this.users.map((data) => data.id).indexOf(id);
                     this.users.splice(i, 1);
@@ -59,17 +59,13 @@ export default {
         },
     },
     created() {
-        this.axios.get("http://localhost:8080/api/users/").then((res) => {
+        this.axios.get("http://localhost:8000/api/users/").then((res) => {
             this.users = res.data;
         });
     },
 
     data() {
         return {
-            // user: {
-            //     name: "",
-            //     email: "",
-            // },
             users: [],
         };
     },

@@ -5313,9 +5313,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -5625,7 +5622,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteUser: function deleteUser(id) {
       var _this = this;
 
-      this.axios["delete"]("http://localhost:8080/api/users/${id}").then(function (res) {
+      this.axios["delete"]("http://localhost:8000/api/users/".concat(id)).then(function (res) {
         var i = _this.users.map(function (data) {
           return data.id;
         }).indexOf(id);
@@ -5637,16 +5634,12 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this2 = this;
 
-    this.axios.get("http://localhost:8080/api/users/").then(function (res) {
+    this.axios.get("http://localhost:8000/api/users/").then(function (res) {
       _this2.users = res.data;
     });
   },
   data: function data() {
     return {
-      // user: {
-      //     name: "",
-      //     email: "",
-      // },
       users: []
     };
   }
@@ -29185,15 +29178,12 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
     [
-      _vm._m(0),
-      _vm._v(" "),
       _c(
         "nav",
         {
           staticClass:
-            "navbar navbar-expand-md navbar-light navbar-top py-3 shadow-sm",
+            "navbar navbar-expand-md navbar-light bg-light navbar-top py-3 shadow-sm",
         },
         [
           _c(
@@ -29211,7 +29201,7 @@ var render = function () {
                     staticClass: "brand-text",
                     class: { shake: _vm.noActivated },
                     attrs: {
-                      src: "",
+                      src: "assets/logo.png",
                       alt: "Purple Letter F inside polygon",
                       width: "43",
                       height: "43",
@@ -29227,7 +29217,7 @@ var render = function () {
                 ]
               ),
               _vm._v(" "),
-              _vm._m(1),
+              _vm._m(0),
               _vm._v(" "),
               _c(
                 "div",
@@ -29243,7 +29233,7 @@ var render = function () {
                       "li",
                       { staticClass: "nav-item me-3" },
                       [
-                        _c("router-link", { attrs: { to: "/AddUser" } }, [
+                        _c("router-link", { attrs: { to: "/create" } }, [
                           _vm._v("Add User"),
                         ]),
                       ],
@@ -29254,7 +29244,7 @@ var render = function () {
                       "li",
                       { staticClass: "nav-item me-3" },
                       [
-                        _c("router-link", { attrs: { to: "/create" } }, [
+                        _c("router-link", { attrs: { to: "/" } }, [
                           _vm._v("All User"),
                         ]),
                       ],
@@ -29275,14 +29265,6 @@ var render = function () {
   )
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center m-5" }, [
-      _c("span", { staticClass: "lead" }, [_vm._v("Hi Laravel")]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement

@@ -1,17 +1,14 @@
 <template>
-    <div class="container">
-        <div class="text-center m-5">
-            <span class="lead">Hi Laravel</span>
-        </div>
+    <div>
         <!-- Start Navbar -->
         <nav
-            class="navbar navbar-expand-md navbar-light navbar-top py-3 shadow-sm"
+            class="navbar navbar-expand-md navbar-light bg-light navbar-top py-3 shadow-sm"
         >
             <div class="container-lg">
                 <router-link class="navbar-brand fs-5 fw-bold" to="/">
                     <img
                         :class="{ shake: noActivated }"
-                        src=""
+                        src="assets/logo.png"
                         alt="Purple Letter F inside polygon"
                         width="43"
                         height="43"
@@ -35,10 +32,10 @@
                     <hr />
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item me-3">
-                            <router-link to="/AddUser">Add User</router-link>
+                            <router-link to="/create">Add User</router-link>
                         </li>
                         <li class="nav-item me-3">
-                            <router-link to="/create">All User</router-link>
+                            <router-link to="/">All User</router-link>
                         </li>
                     </ul>
                 </div>

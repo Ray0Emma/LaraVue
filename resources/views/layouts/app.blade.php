@@ -12,10 +12,9 @@
 <body>
     {{-- @include('site.partials.header') --}}
     {{-- @yield('content') --}}
-    <h1 class="container text-danger">test</1>
-        <div id="app"></div>
-        {{-- @include('site.partials.footer') --}}
-        <script src="{{ mix('js/app.js') }}"></script>
+    <div id="app"></div>
+    {{-- @include('site.partials.footer') --}}
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 
 </html>
