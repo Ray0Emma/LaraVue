@@ -1,23 +1,21 @@
+import UserComponent from "./components/UserComponent.vue";
+import CreateComponent from "./components/CreateComponent.vue";
+import EditComponent from "./components/EditComponent.vue";
+
 export const routes = [
     {
         path: "/",
         name: "users",
-        component: UserComponent,
+        component: () => import("./components/UserComponent.vue"),
     },
     {
         path: "/create",
         name: "create",
-        component: CreateComponent,
+        component: () => import("./components/CreateComponent.vue"),
     },
     {
-        path: "/edit/{id}",
+        path: "/edit/:id",
         name: "edit",
-        component: EditComponent,
+        component: () => import("./components/EditComponent.vue"),
     },
 ];
-
-//   const router = createRouter({
-//     history: createWebHistory(process.env.BASE_URL),
-//     routes
-//   })
-//   export default router
