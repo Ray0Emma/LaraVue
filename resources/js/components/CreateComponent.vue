@@ -84,7 +84,7 @@ export default {
         },
         postUser() {
             return axios
-                .post("http://localhost:8080/api/users/", this.user)
+                .post("http://localhost:8000/api/users/", this.user)
                 .then((resp) => {
                     this.$router.push({ name: "users" });
                     // this.$swal(

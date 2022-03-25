@@ -5424,7 +5424,7 @@ __webpack_require__.r(__webpack_exports__);
     postUser: function postUser() {
       var _this = this;
 
-      return axios.post("http://localhost:8080/api/users/", this.user).then(function (resp) {
+      return axios.post("http://localhost:8000/api/users/", this.user).then(function (resp) {
         _this.$router.push({
           name: "users"
         }); // this.$swal(
