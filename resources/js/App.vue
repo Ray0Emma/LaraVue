@@ -2,7 +2,7 @@
     <div>
         <!-- Start Navbar -->
         <nav
-            class="navbar navbar-expand-md navbar-light bg-light navbar-top py-3 shadow-sm"
+            class="navbar navbar-expand-md navbar-white navbar-top p-3 shadow-sm"
         >
             <div class="container-lg">
                 <router-link class="navbar-brand fs-5 fw-bold" to="/">
@@ -15,7 +15,7 @@
                         class="brand-text"
                         @mouseleave="noActivated = !noActivated"
                     />
-                    <span class="fs-6">Vue</span>
+                    <span class="fs-6">Hi again VueJS!</span>
                 </router-link>
                 <button
                     class="d-lg-none d-md-none bg-white"
@@ -56,9 +56,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+h1 {
+    color: #cb57cb;
+}
 nav.navbar {
     margin-bottom: 34px;
+    background-color: #ffff;
 }
 nav.navbar a span {
     font-weight: bold;
@@ -71,7 +75,7 @@ li.nav-item a {
     margin-right: 12px;
 }
 li.nav-item a.router-link-active {
-    color: #59b984;
+    color: #cb57cb;
 }
 .shake {
     animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;

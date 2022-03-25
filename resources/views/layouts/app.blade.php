@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta name="author" content="AIT ELAHMADI Farah">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{{ asset('assets/favicon.ico') }}">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <title>@yield('title') - {{ config('app.name') }}</title>
+    <title> LaraVue </title>
 </head>
 
-<body>
-    {{-- @include('site.partials.header') --}}
-    {{-- @yield('content') --}}
+<body style="background-color: #ffff;">
+
     <div id="app"></div>
-    {{-- @include('site.partials.footer') --}}
+
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 

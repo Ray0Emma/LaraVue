@@ -27,6 +27,9 @@
                                         name: 'edit',
                                         params: {
                                             id: usr.id,
+                                            name: usr.name,
+                                            email: usr.email,
+                                            password: usr.password,
                                         },
                                     }"
                                     >Edit</router-link
@@ -72,8 +75,4 @@ export default {
 };
 </script>
 
-<style scoped>
-h1 {
-    color: #59b984;
-}
-</style>
+<style scoped></style>

@@ -26,6 +26,7 @@
                                     type="text"
                                     class="form-control"
                                     v-model="user.name"
+                                    disabled
                                 />
                             </div>
                             <div class="form-group mt-3">
@@ -34,6 +35,7 @@
                                     type="text"
                                     class="form-control"
                                     v-model="user.email"
+                                    disabled
                                 />
                             </div>
                             <div class="form-group mt-3">
@@ -50,7 +52,7 @@
                         class="btn btn-dark px-4 mt-3"
                         @click="formValidator()"
                     >
-                        Add
+                        Update
                     </button>
                 </div>
             </div>
@@ -59,11 +61,9 @@
 </template>
 
 <script>
-// import axios from "axios";
 export default {
     data() {
         return {
-            user: {},
             errors: [],
         };
     },
@@ -85,7 +85,7 @@ export default {
         putUser() {
             return axios
                 .patch(
-                    "http://localhost:8080/api/users/${this.$route.params.id}",
+                    `http://localhost:8000/api/users/${this.$route.params.id}`,
                     this.user
                 )
                 .then((resp) => {
@@ -94,11 +94,17 @@ export default {
                 .catch((err) => console.log(err));
         },
     },
+    computed: {
+        user() {
+            let user = {
+                name: this.$route.params.name,
+                email: this.$route.params.email,
+                password: this.$route.params.password,
+            };
+            return user;
+        },
+    },
 };
 </script>
 
-<style scoped>
-h1 {
-    color: #59b984;
-}
-</style>
+<style scoped></style>
