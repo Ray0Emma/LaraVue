@@ -27,9 +27,9 @@
                                         name: 'edit',
                                         params: {
                                             id: usr.id,
-                                            name: usr.name,
-                                            email: usr.email,
-                                            password: usr.password,
+                                            // name: usr.name,
+                                            // email: usr.email,
+                                            // password: usr.password,
                                         },
                                     }"
                                     >Edit</router-link
@@ -57,9 +57,9 @@ export default {
                 .delete(`http://localhost:8000/api/users/${id}`)
                 .then((res) => {
                     let i = this.users.map((data) => data.id).indexOf(id);
-                    console.log(this.users.map((data) => data.id));
-                    console.log("id=".id);
-                    console.log(i);
+                    // console.log(this.users.map((data) => data.id));
+                    // console.log("id=".id);
+                    // console.log(i);
                     this.users.splice(i, 1);
                 });
         },

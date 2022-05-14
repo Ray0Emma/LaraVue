@@ -70,13 +70,10 @@ __webpack_require__.r(__webpack_exports__);
       this.axios["delete"]("http://localhost:8000/api/users/".concat(id)).then(function (res) {
         var i = _this.users.map(function (data) {
           return data.id;
-        }).indexOf(id);
+        }).indexOf(id); // console.log(this.users.map((data) => data.id));
+        // console.log("id=".id);
+        // console.log(i);
 
-        console.log(_this.users.map(function (data) {
-          return data.id;
-        }));
-        console.log("id=".id);
-        console.log(i);
 
         _this.users.splice(i, 1);
       });
@@ -216,9 +213,9 @@ var render = function () {
                               name: "edit",
                               params: {
                                 id: usr.id,
-                                name: usr.name,
-                                email: usr.email,
-                                password: usr.password,
+                                // name: usr.name,
+                                // email: usr.email,
+                                // password: usr.password,
                               },
                             },
                           },

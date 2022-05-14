@@ -74,12 +74,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       errors: [],
+      user: [],
       msg: ""
     };
   },
@@ -270,7 +269,7 @@ var render = function () {
                     },
                   ],
                   staticClass: "form-control",
-                  attrs: { type: "text", disabled: "" },
+                  attrs: { type: "text" },
                   domProps: { value: _vm.user.name },
                   on: {
                     input: function ($event) {
@@ -296,7 +295,7 @@ var render = function () {
                     },
                   ],
                   staticClass: "form-control",
-                  attrs: { type: "text", disabled: "" },
+                  attrs: { type: "text" },
                   domProps: { value: _vm.user.email },
                   on: {
                     input: function ($event) {

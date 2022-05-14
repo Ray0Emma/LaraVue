@@ -29,7 +29,6 @@
                                     type="text"
                                     class="form-control"
                                     v-model="user.name"
-                                    disabled
                                 />
                             </div>
                             <div class="form-group mt-3">
@@ -38,7 +37,6 @@
                                     type="text"
                                     class="form-control"
                                     v-model="user.email"
-                                    disabled
                                 />
                             </div>
                             <div class="form-group mt-3">
@@ -68,6 +66,7 @@ export default {
     data() {
         return {
             errors: [],
+            user: [],
             msg: "",
         };
     },
