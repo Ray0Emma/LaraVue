@@ -73,10 +73,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      errors: []
+      errors: [],
+      msg: ""
     };
   },
   methods: {
@@ -104,6 +108,9 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push({
           name: "users"
         });
+
+        console.log(resp.data);
+        _this.msg = resp.data;
       })["catch"](function (err) {
         return console.log(err);
       });
@@ -226,6 +233,19 @@ var render = function () {
               }),
               0
             )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.msg !== ""
+          ? _c("div", [
+              _c(
+                "p",
+                {
+                  staticClass: "alert alert-success",
+                  attrs: { role: "alert" },
+                },
+                [_vm._v(_vm._s(_vm.msg))]
+              ),
+            ])
           : _vm._e(),
         _vm._v(" "),
         _c("h1", [_vm._v("Update User")]),

@@ -12,6 +12,9 @@
                         <br />
                     </li>
                 </div>
+                <div v-if="msg !== ''">
+                    <p class="alert alert-success" role="alert">{{ msg }}</p>
+                </div>
                 <h1>Update User</h1>
             </div>
         </div>
@@ -65,6 +68,7 @@ export default {
     data() {
         return {
             errors: [],
+            msg: "",
         };
     },
     methods: {
@@ -90,6 +94,8 @@ export default {
                 )
                 .then((resp) => {
                     this.$router.push({ name: "users" });
+                    console.log(resp.data);
+                    this.msg = resp.data;
                 })
                 .catch((err) => console.log(err));
         },

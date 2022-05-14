@@ -1,7 +1,7 @@
 <template>
     <div class="container-lg">
         <div class="row justify-content-center mt-5">
-            <div class="col-6 text-center mt-4">
+            <div class="col-6 mt-4">
                 <div
                     class="alert alert-danger"
                     role="alert"
@@ -12,7 +12,7 @@
                         <br />
                     </li>
                 </div>
-                <h1>Add User</h1>
+                <h1 class="text-center">Add User</h1>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -39,7 +39,7 @@
                             <div class="form-group mt-3">
                                 <label>Password</label>
                                 <input
-                                    type="text"
+                                    type="password"
                                     class="form-control"
                                     v-model="user.password"
                                 />
@@ -70,7 +70,7 @@ export default {
     methods: {
         formValidator() {
             if (!this.user.name) {
-                this.errors.push(" Name required");
+                this.errors.push("Name required");
             }
             if (!this.user.email) {
                 this.errors.push("Email required");
@@ -87,6 +87,7 @@ export default {
                 .post("http://localhost:8000/api/users/", this.user)
                 .then((resp) => {
                     this.$router.push({ name: "users" });
+                    console.log(resp.data);
                     // this.$swal(
                     //     "A new user is added.",
                     //     "Operation Succeeded",

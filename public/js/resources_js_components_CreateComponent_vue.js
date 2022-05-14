@@ -82,7 +82,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     formValidator: function formValidator() {
       if (!this.user.name) {
-        this.errors.push(" Name required");
+        this.errors.push("Name required");
       }
 
       if (!this.user.email) {
@@ -103,12 +103,13 @@ __webpack_require__.r(__webpack_exports__);
       return axios.post("http://localhost:8000/api/users/", this.user).then(function (resp) {
         _this.$router.push({
           name: "users"
-        }); // this.$swal(
+        });
+
+        console.log(resp.data); // this.$swal(
         //     "A new user is added.",
         //     "Operation Succeeded",
         //     "success"
         // );
-
       })["catch"](function (err) {
         return console.log(err);
       } // this.$swal("Oops...", "Something went wrong!", "error");
@@ -207,7 +208,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-lg" }, [
     _c("div", { staticClass: "row justify-content-center mt-5" }, [
-      _c("div", { staticClass: "col-6 text-center mt-4" }, [
+      _c("div", { staticClass: "col-6 mt-4" }, [
         _vm.errors.length > 0
           ? _c(
               "div",
@@ -226,7 +227,7 @@ var render = function () {
             )
           : _vm._e(),
         _vm._v(" "),
-        _c("h1", [_vm._v("Add User")]),
+        _c("h1", { staticClass: "text-center" }, [_vm._v("Add User")]),
       ]),
     ]),
     _vm._v(" "),
@@ -300,7 +301,7 @@ var render = function () {
                     },
                   ],
                   staticClass: "form-control",
-                  attrs: { type: "text" },
+                  attrs: { type: "password" },
                   domProps: { value: _vm.user.password },
                   on: {
                     input: function ($event) {
